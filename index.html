@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Aceitas?</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f2f2f2;
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+        }
+
+        #text {
+            margin-bottom: 30px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #000000;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            background-color: #ffb3c1;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        
+        #image-container {
+            position: relative;
+        }
+        
+        #image {
+            max-width: 600px;
+            max-height: 600px;
+        }
+        
+        #content-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .hide {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="image-container">
+        <img id="image" src="https://drive.google.com/uc?export=view&id=1V6iLtzGz8qqZKwsJYCFzAbCR8QFAEHtU" alt="Imagem">
+        <div id="content-container">
+            <div id="text">Quer namorar comigo?</div>
+            <button id="button-no" class="button">Não</button>
+            <button id="button-yes" class="button">Sim</button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // Função chamada quando o botão 'Não' é clicado
+        function denied() {
+            var button = $('#button-no');
+            button.animate({ opacity: 0, left: '-50px' }, 500, function() {
+                button.addClass('hide');
+            });
+        }
+
+        // Função chamada quando o botão 'Sim' é clicado
+        function accepted() {
+            alert('Você é a mulher com quem eu quero dançar todas as minhas danças <3');
+        }
+
+        // Adicionar os eventos de clique nos botões
+        $('#button-no').click(denied);
+        $('#button-yes').click(accepted);
+    </script>
+</body>
+</html>
